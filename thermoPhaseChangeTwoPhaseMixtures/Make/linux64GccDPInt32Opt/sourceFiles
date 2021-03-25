@@ -1,0 +1,6 @@
+SOURCE = \
+thermoPhaseChangeTwoPhaseMixture/thermoPhaseChangeTwoPhaseMixture.C \
+thermoPhaseChangeTwoPhaseMixture/thermoPhaseChangeTwoPhaseMixtureNew.C \
+Kunz/Kunz.C \
+Merkle/Merkle.C \
+SchnerrSauer/SchnerrSauer.C 

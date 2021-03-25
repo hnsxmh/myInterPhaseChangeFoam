@@ -1,0 +1,10 @@
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+wclean libso twoPhaseMixture
+wclean libso interfaceProperties
+wclean libso twoPhaseProperties
+wclean libso thermoIncompressibleTwoPhaseMixture
+wclean libso thermoImmiscibleIncompressibleTwoPhaseMixture
+
+#------------------------------------------------------------------------------
