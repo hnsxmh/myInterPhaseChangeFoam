@@ -1,1 +1,0 @@
-../alphaFixedPressure/alphaFixedPressureFvPatchScalarField.H

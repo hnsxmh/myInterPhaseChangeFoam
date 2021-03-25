@@ -1,1 +1,0 @@
-../alphaContactAngle/timeVaryingAlphaContactAngle/timeVaryingAlphaContactAngleFvPatchScalarField.H

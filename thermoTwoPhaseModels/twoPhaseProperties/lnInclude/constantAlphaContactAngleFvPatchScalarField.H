@@ -1,1 +1,0 @@
-../alphaContactAngle/constantAlphaContactAngle/constantAlphaContactAngleFvPatchScalarField.H

@@ -1,1 +1,0 @@
-../interfaceCompression/interfaceCompression.C

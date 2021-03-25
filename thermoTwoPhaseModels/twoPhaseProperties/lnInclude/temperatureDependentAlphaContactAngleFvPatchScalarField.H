@@ -1,1 +1,0 @@
-../alphaContactAngle/temperatureDependentAlphaContactAngle/temperatureDependentAlphaContactAngleFvPatchScalarField.H
