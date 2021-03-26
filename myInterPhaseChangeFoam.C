@@ -155,6 +155,8 @@ int main(int argc, char *argv[])
 
             #include "TEqn.H"
 
+            #include "calcPSatField.H"
+
             if (pimple.turbCorr())
             {
                 turbulence->correct();

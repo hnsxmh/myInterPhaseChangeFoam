@@ -73,6 +73,35 @@ volScalarField TSource
     dimensionedScalar(dimTemperature/dimTime, 0.)
 );
 
+Info<< "Creating field mass change\n" << endl;
+volScalarField massChange
+(
+    IOobject
+    (
+        "massChange",
+        runTime.timeName(),
+        mesh,
+        IOobject::NO_READ,
+        IOobject::AUTO_WRITE
+    ),
+    mesh,
+    dimensionedScalar(dimensionSet(0, 0 , -1, 0, 0, 0, 0), 0.)
+);
+
+volScalarField pSat
+(
+    IOobject
+    (
+        "pSat",
+        runTime.timeName(),
+        mesh,
+        IOobject::NO_READ,
+        IOobject::AUTO_WRITE
+    ),
+    p_rgh // initial value will be overwritten in calcPSatField.H
+);
+#include "calcPSatField.H"
+
 #include "createPhi.H"
 
 

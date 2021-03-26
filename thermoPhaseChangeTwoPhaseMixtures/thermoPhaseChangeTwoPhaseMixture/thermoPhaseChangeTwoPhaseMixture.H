@@ -62,8 +62,8 @@ protected:
 
         dictionary thermoPhaseChangeTwoPhaseMixtureCoeffs_;
 
-        //- Saturation vapour pressure
-        dimensionedScalar pSat_;
+        // //- Saturation vapour pressure
+        // dimensionedScalar pSat_;
         //- Latent heat
         dimensionedScalar lHeat_;        
 
@@ -121,9 +121,17 @@ public:
     // Member Functions
 
         //- Return const-access to the saturation vapour pressure
-        const dimensionedScalar& pSat() const
+        // const volScalarField& pSat() const
+        // {
+        //     const volScalarField& pSat = alpha1_.db().lookupObject<volScalarField>("pSat");
+        //     return pSat;
+        // }
+
+        //- Return const-access to the saturation vapour pressure
+        const volScalarField& pSat() const
         {
-            return pSat_;
+            const volScalarField& pSat = DT_.db().lookupObject<volScalarField>("pSat");
+            return pSat;
         }
 
         const dimensionedScalar& lHeat() const

@@ -44,7 +44,7 @@ Foam::thermoPhaseChangeTwoPhaseMixture::thermoPhaseChangeTwoPhaseMixture
 :
     thermoImmiscibleIncompressibleTwoPhaseMixture(U, phi),
     thermoPhaseChangeTwoPhaseMixtureCoeffs_(optionalSubDict(type + "Coeffs")),
-    pSat_("pSat", dimPressure, lookup("pSat")),
+    //pSat_("pSat", dimPressure, lookup("pSat")),
     lHeat_("lHeat", dimEnergy/dimMass, lookup("lHeat"))
 {}
 
@@ -86,7 +86,7 @@ bool Foam::thermoPhaseChangeTwoPhaseMixture::read()
     if (thermoImmiscibleIncompressibleTwoPhaseMixture::read())
     {
         thermoPhaseChangeTwoPhaseMixtureCoeffs_ = optionalSubDict(type() + "Coeffs");
-        lookup("pSat") >> pSat_;
+        //lookup("pSat") >> pSat_;
 
         return true;
     }
