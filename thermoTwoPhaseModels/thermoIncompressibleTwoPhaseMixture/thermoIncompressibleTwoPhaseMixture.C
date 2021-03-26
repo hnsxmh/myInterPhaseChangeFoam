@@ -216,7 +216,13 @@ Foam::thermoIncompressibleTwoPhaseMixture::nuf() const
 
 Foam::tmp<Foam::volScalarField> Foam::thermoIncompressibleTwoPhaseMixture::Cp() const
 {
-    return alpha1_*Cp1_ + alpha2_*Cp2_;
+    const volScalarField limitedAlpha1
+    (
+        "limitedAlpha1",
+        min(max(alpha1_, scalar(0)), scalar(1))
+    );
+    return (limitedAlpha1*rho1_*Cp1_ + (scalar(1) - limitedAlpha1)*rho2_*Cp2_) \
+    /(limitedAlpha1*rho1_ + (scalar(1) - limitedAlpha1)*rho2_);
 }
 
 
