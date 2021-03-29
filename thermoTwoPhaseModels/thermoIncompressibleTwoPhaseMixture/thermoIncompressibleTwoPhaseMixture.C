@@ -225,10 +225,26 @@ Foam::tmp<Foam::volScalarField> Foam::thermoIncompressibleTwoPhaseMixture::Cp() 
     return volScalarField::New
     (
         "Cp",
-        (limitedAlpha1*rho1_*Cp1_ + (scalar(1) - limitedAlpha1)*rho2_*Cp2_)
-    /(limitedAlpha1*rho1_ + (scalar(1) - limitedAlpha1)*rho2_)
+        (limitedAlpha1*rho1()*Cp1() + (scalar(1) - limitedAlpha1)*rho2()*Cp2())
+    /(limitedAlpha1*rho1() + (scalar(1) - limitedAlpha1)*rho2())
     );
 }
+////// can kappa of mixture so approximated??????????????????????
+Foam::tmp<Foam::volScalarField> Foam::thermoIncompressibleTwoPhaseMixture::kappa() const
+{
+    const volScalarField limitedAlpha1
+    (
+        "limitedAlpha1",
+        min(max(alpha1_, scalar(0)), scalar(1))
+    );
+
+    return volScalarField::New
+    (
+        "kappa",
+        limitedAlpha1*kappa1()+ (scalar(1) - limitedAlpha1)*kappa2()
+    );
+}
+
 
 
 bool Foam::thermoIncompressibleTwoPhaseMixture::read()

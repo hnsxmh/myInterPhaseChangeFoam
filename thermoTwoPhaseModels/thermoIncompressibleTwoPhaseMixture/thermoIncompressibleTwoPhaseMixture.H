@@ -194,6 +194,9 @@ public:
         //- Return the Cp
         virtual tmp<volScalarField> Cp() const;
 
+        //- Return the kappa
+        virtual tmp<volScalarField> kappa() const;
+
         //- Correct the laminar viscosity
         virtual void correct()
         {
